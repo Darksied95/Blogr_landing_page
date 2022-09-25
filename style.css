@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+:root {
+  --clr-light-red: hsl(356, 100%, 66%);
+  --clr-very-light-red: hsl(355, 100%, 74%);
+  --clr-very-dark-blue: hsl(208, 49%, 24%);
+  --clr-grayish-blue: hsl(240, 2%, 79%);
+  --clr-very-dark-grayish-blue: hsl(207, 13%, 34%);
+  --clr-very-dark-black-blue: hsl(240, 10%, 16%);
+  --gd-very-light-red: hsl(13, 100%, 72%);
+  --gd-light-red: hsl(353, 100%, 62%);
+  --gd-very-dark-gray-blue: hsl(237, 17%, 21%);
+  --gd-very-dark-desaturated-blue: hsl(237, 23%, 32%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.overpass {
+  font-family: "Overpass", sans-serif;
+  font-weight: var(--weight, 300);
+}
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: var(--weight, 400);
+}
+.header {
+  background-image: url(/assets/bg-pattern-intro-mobile.svg),
+    linear-gradient(
+      to bottom right,
+      var(--gd-very-light-red),
+      var(--gd-light-red)
+    );
+  background-size: 280%;
+  background-position: -200px -240px;
+  padding: 1.8em;
+  padding-top: 3em;
+  font-size: 1.1rem;
+  border-bottom-left-radius: 60px;
+}
+.close-icon {
+  display: none;
+}
+ul {
+  list-style-type: none;
+}
+.flex {
+  display: flex;
+}
+.header header {
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.nav-lists-container {
+  display: none;
+  position: absolute;
+  top: 150%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+.connect {
+  border-bottom: 1px solid var(--clr-very-dark-blue);
+}
+.connect p {
+  text-align: center;
+  display: inline-block;
+  padding-bottom: 1em;
+}
+.connect img {
+  display: inline-block;
+}
+.nav-lists > li {
+  margin: 2em;
+}
+.sub-list {
+  display: none;
+  background-color: var(--clr-grayish-blue);
+  margin-bottom: 20px;
+  border: 5px;
+  padding: 1px;
+}
+.sub-list > li {
+  margin: 1em;
+}
+.sign-up {
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    var(--gd-very-light-red),
+    var(--gd-light-red)
+  );
+  display: inline-block;
+  color: white;
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  padding: 0.7em 1.8em 0.5em;
+  border-radius: 30px;
+}
+.header-heading,
+.header-paragraph {
+  color: white;
+  text-align: center;
+  margin-block: 1.4em;
+}
+.header-heading {
+  margin-top: 3em;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid white;
+  background-color: var(--bg);
+  margin-left: 1em;
+  color: var(--clr, var(--clr-light-red));
+}
+.button-container {
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 5em;
+}
+
+/* 
+*
+*
+*
+*
+*
+*/
+@media screen and (min-width: 650px) {
+  .hamburger,
+  .close-icon {
+    display: none;
+  }
+  .header {
+    padding-inline: 0;
+    background-image: url(/assets/bg-pattern-intro-desktop.svg),
+      linear-gradient(
+        to bottom right,
+        var(--gd-very-light-red),
+        var(--gd-light-red)
+      );
+    padding-inline: 5vw;
+    color: white;
+  }
+  .nav-lists-container {
+    display: unset;
+    position: unset;
+    background-color: unset;
+    margin-left: 1em;
+    width: 100%;
+  }
+
+  .nav-lists {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  .nav-lists li {
+    margin: 0;
+  }
+  .connect {
+    border: 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .connect p {
+    padding: 0;
+  }
+  .form {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 1em;
+  }
+  .sign-up {
+    background-image: unset;
+    background-color: white;
+    color: var(--clr-light-red);
+  }
+  .sign-up:where(:hover, :focus) {
+    opacity: 0.5;
+  }
+  .sub-list {
+    display: none;
+    position: absolute;
+    top: 200%;
+    background-color: white;
+    color: var(--clr-very-dark-blue);
+    border-radius: 5px;
+  }
+  .sub-list li {
+    margin: 1em;
+    margin-right: 2.5em;
+    text-align: left;
+  }
+  .header-heading {
+    font-size: 3rem;
+    margin-bottom: 0;
+  }
+  .header-paragraph {
+    font-size: 1.5rem;
+    margin-block-start: 0.5em;
+    margin-block-end: 1em;
+  }
+  button {
+    padding-inline: 3em;
+    font-size: 1rem;
+  }
+}
