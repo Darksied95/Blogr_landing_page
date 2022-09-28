@@ -250,7 +250,7 @@ footer li a {
   .hamburger,
   .close-icon,
   .mobile-icon {
-    display: none;
+    display: none !important;
   }
   .desktop-icon {
     display: block;
@@ -264,7 +264,7 @@ footer li a {
     color: white;
   }
   .nav-lists-container {
-    display: unset;
+    display: block !important;
     position: unset;
     background-color: unset;
     margin-left: 1em;
@@ -342,10 +342,10 @@ footer li a {
 }
 @media screen and (min-width: 1005px) {
   .mobile {
-    display: none;
+    display: none !important;
   }
   .desktop {
-    display: block;
+    display: block !important;
   }
   .article-container {
     background-image: url(/assets/illustration-editor-desktop.svg);
