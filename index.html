@@ -15,17 +15,25 @@
           src="/assets/icon-hamburger.svg"
           alt="more-icon"
           class="hamburger"
+          id="hamburger"
         />
-        <img src="/assets/icon-close.svg" alt="close-icon" class="close-icon" />
-        <nav class="nav-lists-container">
+        <img
+          src="/assets/icon-close.svg"
+          alt="close-icon"
+          class="close-icon"
+          id="close-icon"
+        />
+        <nav class="nav-lists-container" id="nav-lists-container">
           <ul class="nav-lists">
             <li>Product</li>
             <li>Company</li>
-            <li class="connect">
+            <li class="connect" id="connect">
               <p class="flex">
-                Connect <img src="/assets/icon-arrow-dark.svg" />
+                Connect
+                <img src="/assets/icon-arrow-dark.svg" class="mobile-icon" />
+                <img src="/assets/icon-arrow-light.svg" class="desktop-icon" />
               </p>
-              <ul class="sub-list">
+              <ul class="sub-list" id="sub-list">
                 <li>Contact</li>
                 <li>Newsletter</li>
                 <li>LinkedIn</li>
@@ -96,7 +104,7 @@
         </p>
       </div>
     </div>
-    <div class="article-container">
+    <div class="article-container laptop">
       <img
         src="./assets/illustration-laptop-mobile.svg"
         alt="laptop icon"
@@ -104,25 +112,84 @@
       />
       <div class="articles">
         <div class="article first-article">
-          <h3>Introducing an extensible editor</h3>
+          <h3>Free, open, simple</h3>
           <p>
-            Blogr features an exceedingly intuitive interface which let's you
-            focus on one thing: creating content. The editor supports management
-            of multiple blogs and allows easy manipulation of embeds such as
-            images, videos and Markdown. Extensibility with plugins and themes
-            provide easy ways to add functionality or change the looks of a blog
+            Blogr is a free and open source application backed by a large
+            community of helpful developers. It supports features such as code
+            syntax highlighting, RSS feeds, social media integration,
+            third-party commenting tool, and works seamlessly with Google
+            Analytics. The architecture is clean and is relatively easy to
+            learn.
           </p>
         </div>
         <div class="article second-article">
-          <h3>Robust content management</h3>
+          <h3>Powerful tooling</h3>
           <p>
-            Flexible content management enables users to easily move through
-            posts. Increase the usability of your blog by adding customized
-            categories, sections, format, or flow. With this functionality,
-            you're in full control.
+            Batteries included. We built a simple and straightforward CLI tool
+            that makes customization and deployment a breeze, but capable of
+            producing even the most complicated sites.
           </p>
         </div>
       </div>
     </div>
+    <footer>
+      <img src="./assets/logo.svg" />
+      <div>
+        <h1>Product</h1>
+        <ul>
+          <li><a href="/">Overview</a></li>
+          <li><a href="/">Pricing</a></li>
+          <li><a href="/">Marketplace</a></li>
+          <li><a href="/">Features</a></li>
+          <li><a href="/">Integrations</a></li>
+        </ul>
+      </div>
+      <div>
+        <h1>Company</h1>
+        <ul>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Team</a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h1>Connect</h1>
+        <ul>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/">Newsletter</a></li>
+          <li><a href="/">Linkedin</a></li>
+        </ul>
+      </div>
+    </footer>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const nav_lists_container = document.getElementById(
+        "nav-lists-container"
+      );
+      const sub_list = document.getElementById("sub-list");
+      const connect = document.getElementById("connect");
+      const closeIcon = document.getElementById("close-icon");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.style.display = "none";
+        nav_lists_container.style.display = "block";
+        closeIcon.style.display = "block";
+      });
+      closeIcon.addEventListener("click", () => {
+        hamburger.style.display = "block";
+        nav_lists_container.style.display = "none";
+        closeIcon.style.display = "none";
+      });
+
+      connect.addEventListener("click", () => {
+        console.log(sub_list.style.display);
+        if (sub_list.style.display === "" || sub_list.style.display == "none") {
+          sub_list.style.display = "block";
+        } else {
+          sub_list.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>

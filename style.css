@@ -25,6 +25,7 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  outline: 0 !important;
 }
 
 img {
@@ -42,19 +43,17 @@ img {
 }
 .header {
   background-image: url(/assets/bg-pattern-intro-mobile.svg),
-    linear-gradient(
-      to bottom right,
-      var(--gd-very-light-red),
-      var(--gd-light-red)
-    );
-  background-size: 280%;
+    linear-gradient(to right, var(--gd-very-light-red), var(--gd-light-red));
+  background-blend-mode: lighten;
+  background-size: 180%;
   background-position: -200px -240px;
   padding: 1.8em;
   padding-top: 3em;
   font-size: 1.1rem;
   border-bottom-left-radius: 60px;
 }
-.close-icon {
+.close-icon,
+.desktop-icon {
   display: none;
 }
 ul {
@@ -172,7 +171,7 @@ button {
   border-top-right-radius: 60px;
   border-bottom-left-radius: 60px;
   position: relative;
-  height: 500px;
+  height: 550px;
 }
 .article-with-phones * {
   color: white;
@@ -200,6 +199,32 @@ button {
 .awp-article {
   margin: min(12em) auto 4em;
 }
+.laptop {
+  margin-bottom: 6em;
+}
+footer {
+  background-color: var(--clr-very-dark-black-blue);
+  text-align: center;
+  border-top-right-radius: 120px;
+  padding-block: 5em;
+}
+footer > div {
+  margin-bottom: 2em;
+}
+footer img {
+  margin: auto;
+  margin-bottom: 3em;
+}
+footer h1 {
+  color: white;
+  font-size: 1.6rem;
+  margin-bottom: 1em;
+}
+footer li a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
 
 /* 
 *
@@ -223,17 +248,18 @@ button {
 
 @media screen and (min-width: 650px) {
   .hamburger,
-  .close-icon {
+  .close-icon,
+  .mobile-icon {
     display: none;
+  }
+  .desktop-icon {
+    display: block;
   }
   .header {
     padding-inline: 0;
     background-image: url(/assets/bg-pattern-intro-desktop.svg),
-      linear-gradient(
-        to bottom right,
-        var(--gd-very-light-red),
-        var(--gd-light-red)
-      );
+      linear-gradient(to right, var(--gd-very-light-red), var(--gd-light-red));
+    background-blend-mode: lighten;
     padding-inline: 5vw;
     color: white;
   }
@@ -328,7 +354,6 @@ button {
     background-position: 114% 0;
     margin-top: 4em;
     padding-top: 1em;
-    outline: 1px solid red;
   }
   .article-container h2 {
     margin: 0 auto;
@@ -360,5 +385,35 @@ button {
     margin: 0;
     margin-left: auto;
     width: 60%;
+  }
+  .laptop {
+    background-image: url(/assets/illustration-editor-desktop.svg);
+    background-position: -14% 0;
+  }
+  .laptop > .articles {
+    margin-left: auto;
+    margin-right: max(10vw, 8em) !important;
+  }
+  footer * {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  footer {
+    display: flex;
+    align-items: flex-start;
+    padding: 2em 0;
+  }
+  footer > div {
+    width: 25%;
+    height: 100%;
+  }
+  footer h1 {
+    margin-bottom: 1em !important;
+  }
+  footer ul li {
+    margin-bottom: 0.6em !important;
+  }
+  footer img {
+    margin-left: 3em !important;
   }
 }
