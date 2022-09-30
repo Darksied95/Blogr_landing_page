@@ -32,7 +32,10 @@ img {
   max-width: 100%;
   display: block;
 }
-
+.hamburger,
+.close-icon {
+  cursor: pointer;
+}
 .overpass {
   font-family: "Overpass", sans-serif;
   font-weight: var(--weight, 300);
@@ -79,6 +82,9 @@ ul {
 }
 .connect {
   border-bottom: 1px solid var(--clr-very-dark-blue);
+}
+.connect:hover {
+  cursor: pointer;
 }
 .connect p {
   text-align: center;
@@ -133,6 +139,9 @@ button {
   background-color: var(--bg);
   margin-left: 1em;
   color: var(--clr, var(--clr-light-red));
+}
+button:hover {
+  cursor: pointer;
 }
 .button-container {
   width: fit-content;
@@ -294,6 +303,9 @@ footer li a {
     margin-left: auto;
     align-items: center;
     gap: 1em;
+  }
+  .form > *:hover {
+    cursor: pointer;
   }
   .sign-up {
     background-image: unset;
